@@ -20,7 +20,7 @@ setup(
     install_requires=[],
     packages=find_packages(where="src"),
     package_dir={"": "src"},
-    keywords=['dependency injection', 'unif of work', 'decorators'],
+    keywords=['dependency injection', 'unif of work', 'decorators', 'typings'],
     extras_require={
         'tests': ['pytest'],
         'build': ['twine', 'wheel']

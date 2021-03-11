@@ -5,6 +5,7 @@
     <img alt="GitHub branch checks state" src="https://img.shields.io/github/checks-status/vimtor/quickd/main">
     <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/vimtor/quickd">
     <img alt="GitHub" src="https://img.shields.io/github/license/vimtor/quickd">
+    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dw/quickd">
    </p>
 </div>
 
