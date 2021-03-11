@@ -33,11 +33,9 @@ def test_constructor_inject():
 
 
 def test_function_inject():
+    @inject
     def get_database(database: Database):
         return str(database)
-
-    inject(get_database)
-    inject(1)
 
     @factory
     def choose_database() -> Database:

@@ -1,16 +1,17 @@
 from inspect import ismethod
+from typing import get_type_hints
 
 from .singletons import constructors, instances
 
 
-def is_method(obj: object, func: Callable[Any, Any]):
+def is_method(obj: object, func):
     name = func.__name__
     return hasattr(obj, name) and ismethod(getattr(obj, name))
 
 
 def inject(function):
     hints = get_type_hints(function)
-    default_args: Parameters = []
+    default_args = []
 
     def wrapper(*args):
         if not default_args:
