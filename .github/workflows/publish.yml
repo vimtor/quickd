@@ -1,0 +1,21 @@
+name: Publish
+on:
+  release
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+      - name: Install dependencies
+        run: pip install -e .[build]
+      - name: Build package
+        run: python setup.py sdist bdist_wheel
+      - name: Check requirements
+        run: twine check dist/*
+      - name: Publish package
+        run: twine upload dist/*
