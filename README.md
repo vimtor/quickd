@@ -2,7 +2,7 @@
    <h1>quickd</h1>
    <p>Decorator type based dependency injection</p>
    <p align="center">
-    <img alt="GitHub branch checks state" src="https://img.shields.io/github/checks-status/vimtor/quickd/main">
+    <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/vimtor/quickd/Test">
     <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/vimtor/quickd">
     <img alt="GitHub" src="https://img.shields.io/github/license/vimtor/quickd">
     <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dw/quickd">
