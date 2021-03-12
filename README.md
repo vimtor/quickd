@@ -177,24 +177,16 @@ Following the above example we can create a unit test mocking the persistance, w
 faster.
 
 ```python
+fake_user = {'id': 1, 'name': 'Tom'}
+
 class FakeUserRepository(UserRepository):
-    def __init__(self):
-        self.users = {}
-
     def save(self, user):
-        self.users[user.id] = user
-
-    def search(self, id):
-        return self.users[id]
-
+        assert user == fake_user
 
 repository = FakeUserRepository()
 user_creator = UserCreator(repository)
 
-fake_user = {'id': 1, 'name': 'Tom'}
 user_creator.create(fake_user)
-
-assert repository.search(fake_user['id']) == fake_user
 ```
 
 ## 🧠 Motivation
