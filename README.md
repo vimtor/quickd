@@ -60,7 +60,7 @@ There are only 3 decorators that compose the whole framework
 ### `@factory`
 
 - Registers an instance for a specific type for later use with `@inject`
-- Is mandatory to annotate the function with the return type of the class to later inject
+- Is mandatory to annotate the function with the return type of the class that you want to inject later
 - It is **not** dynamic, so the implementation can only be chosen once
 
 ```python
@@ -74,8 +74,8 @@ def choose_database() -> Database:
 
 ### `@inject`
 
-- Injects dependencies to a function by matching its arguments types with what has been registered.
-- As you can see below, it can work with constructors too
+- Injects dependencies to a function by matching its arguments types with what has been registered
+- As you can see below, it also works with constructors
 
 ```python
 from quickd import inject
@@ -129,6 +129,8 @@ get_users()  # ['Bob', 'Tom', 'Pol']
 
 ## 👨‍🍳 Recipes
 
+Here are some common solutions to scenarios you will face.
+
 ### Interfaces
 
 ```python
@@ -179,9 +181,11 @@ faster.
 ```python
 fake_user = {'id': 1, 'name': 'Tom'}
 
+
 class FakeUserRepository(UserRepository):
     def save(self, user):
         assert user == fake_user
+
 
 repository = FakeUserRepository()
 user_creator = UserCreator(repository)
@@ -193,13 +197,12 @@ user_creator.create(fake_user)
 
 Dependency injection provides a great way to decouple your classes in order to improve testability and maintainability.
 
-Frameworks like [Spring](https://spring.io/) or [Symfony](https://symfony.com/) are loved by the community by how easy
-they make this process for the developer.
+Frameworks like [Spring](https://spring.io/) or [Symfony](https://symfony.com/) are loved by the community.
 
 > I will just add a parameter to the constructor and Spring will fill with a global instance of the class
 
 These frameworks rely heavy on the type system, to know which class should go where.
 
-From Python 3.5 we have the [typing](https://docs.python.org/3/library/typing.html) package, which allows us to have the
-simple framework to inject dependencies that Python deserves.
+From Python 3.5 we have the [typing](https://docs.python.org/3/library/typing.html) package. This addition allows us to
+have the dependency injection framework that Python deserves.
 
