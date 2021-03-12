@@ -193,6 +193,23 @@ user_creator = UserCreator(repository)
 user_creator.create(fake_user)
 ```
 
+### Configuration
+
+There are multiple ways to configure your classes. A simple approach is to use environment variables on your factory
+annotated methods.
+
+```python
+import os
+from quickd import factory
+
+
+@factory
+def choose_database() -> Database:
+    username = os.environ.get("POSTGRES_USER")
+    password = os.environ.get("POSTGRES_PASS")
+    return PostgreSQL(username, password)
+```
+
 ## 🧠 Motivation
 
 Dependency injection provides a great way to decouple your classes in order to improve testability and maintainability.
