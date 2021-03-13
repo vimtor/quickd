@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as file:
 
 setup(
     name='quickd',
-    version='0.1.0',
+    version='0.1.1',
     license='MIT',
     author='Victor Navarro',
     author_email='victor@vimtor.io',
