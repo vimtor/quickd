@@ -1,6 +1,6 @@
 <div align="center">
    <h1 align="center">quickd</h1>
-   <p align="center">Decorator type based dependency injection for Python</p>
+   <p align="center">Decorator type-based dependency injection for Python</p>
    <p align="center">
     <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/vimtor/quickd/Test">
     <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/vimtor/quickd">
