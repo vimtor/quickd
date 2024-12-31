@@ -9,7 +9,6 @@ setup(
     version='0.1.1',
     license='MIT',
     author='Victor Navarro',
-    author_email='victor@vimtor.io',
     description='Decorator type-based dependency injection',
     long_description=long_description,
     long_description_content_type="text/markdown",
